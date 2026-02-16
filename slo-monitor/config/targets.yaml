@@ -1,0 +1,27 @@
+# Services to monitor
+- name: google
+  url: https://www.google.com
+  method: GET
+  timeout: 5
+  expected_status: 200
+  tags:
+    - external
+    - web
+
+- name: github
+  url: https://github.com
+  method: GET
+  timeout: 5
+  expected_status: 200
+  tags:
+    - external
+    - web
+
+- name: github-api
+  url: https://api.github.com
+  method: GET
+  timeout: 5
+  expected_status: 200
+  tags:
+    - external
+    - api

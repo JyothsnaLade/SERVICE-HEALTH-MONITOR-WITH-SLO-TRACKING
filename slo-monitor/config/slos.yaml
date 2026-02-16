@@ -1,0 +1,22 @@
+# SLO definitions
+- name: google-slo
+  service: google
+  uptime_target: 99.9        
+  latency_target: 500        
+  error_budget: 0.1         
+  evaluation_window: 24h
+
+- name: github-slo
+  service: github
+  uptime_target: 99.5        
+  latency_target: 1000       
+  error_budget: 0.5          
+  evaluation_window: 24h
+
+- name: github-api-slo
+  service: github-api
+  uptime_target: 99.9        
+  latency_target: 200        
+  error_budget: 0.1          
+  evaluation_window: 24h
+
