@@ -1,0 +1,24 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'slo-monitor'
+
+scrape_configs:
+  - job_name: 'slo-monitor'
+    static_configs:
+      - targets: ['slo-monitor:9090']
+        labels:
+          service: 'slo-monitor'
+    
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+# Alerting rules (optional)
+rule_files:
+  # - "alerts.yml"
